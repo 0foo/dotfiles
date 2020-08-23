@@ -5,7 +5,7 @@ function ecr-push {
 }
 
 
-function mutant-city-generate-random-hash() {
+function mutant-city-generate-random-hash {
   local size
   local out
   [ -z "$1" ] && size=10 || size=$1
