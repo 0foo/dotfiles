@@ -1,9 +1,9 @@
 #!/bin/bash
+echo "Whats up!"
 
 function ecr-push {
   true;
 }
-
 
 function mutant-city-generate-random-hash {
   local size
@@ -20,7 +20,6 @@ function mutant-city-generate-ssh-key {
   ssh-keygen -t rsa -b 4096 -f "$filename" -q -N ""
   echo "Key Generated: $random_num and $random_num.pub"
 }
-
 
 function mutant-city-git-push-all {
   [ -z "$1" ] && message="Update" || message=$1
