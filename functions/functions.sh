@@ -1,7 +1,11 @@
 #!/bin/bash
 echo "Whats up!"
 
-function ecr-push {
+function mutant-city-ecr-authenticate {
+  [ -z "$1" ] && echo "Parameters required: region username aws_account_id" && return
+  [ -z "$2" ] && echo "Parameters required: input region username aws_account_id" && return
+  [ -z "$3" ] && echo "Parameters required: input region username aws_account_id" && return
+  aws ecr get-login-password --region "$1" | docker login --username "$2" --password-stdin "$3.dkr.ecr.$1.amazonaws.com"
   true;
 }
 
