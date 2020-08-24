@@ -9,9 +9,9 @@ function mutant-city-ecr-authenticate {
   aws ecr get-login-password --region "$1" | docker login --username "AWS" --password-stdin "$2.dkr.ecr.$1.amazonaws.com"
   true;
 }
-# $1=container id $2=account_id $3=region $4=name of ecr repo
+# $1=image id $2=account_id $3=region $4=name of ecr repo
 function mutant-city-ecr-push {
-  error_msg='Parameters required: $1=container id $2=account_id $3=region $4=name of ecr repo'
+  error_msg='Parameters required: $1=image id $2=account_id $3=region $4=name of ecr repo'
   [ -z "$1" ] && echo "$error_msg" && return
   [ -z "$2" ] && echo "$error_msg" && return
   [ -z "$3" ] && echo "$error_msg" && return
