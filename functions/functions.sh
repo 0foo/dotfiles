@@ -18,6 +18,7 @@ function mutant-city-ecr-push {
   [ -z "$4" ] && echo "$error_msg" && return
 
   aws ecr create-repository --repository-name "$4" --image-scanning-configuration scanOnPush=true --region "$3"
+  wait $!
   url="$2.dkr.ecr.$3.amazonaws.com/$4"
   docker tag $1 $url
   docker push $url
