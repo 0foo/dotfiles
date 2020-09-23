@@ -53,7 +53,7 @@ function mutant-city-git-push-all {
 # requires keychain dependency
 # https://www.funtoo.org/Keychain
 function mutant-city-add-ssh-keys-to-keychain{
-  KEYS=$(find ~/.ssh/* -maxdepth 1 -type f -not -name '*.pub' -type f -not -name 'known_hosts' -not -name 'config')
+  KEYS=$(find $HOME/.ssh/* -maxdepth 1 -type f -not -name '*.pub' -type f -not -name 'known_hosts' -not -name 'config')
   eval `keychain --eval --agents ssh $KEYS`
 }
 
