@@ -8,8 +8,6 @@
 #   main user and root, be sure to reboot after adding to the group!
 
 
-
-
 # add keys to keychain
 # requires keychain dependency
 # https://www.funtoo.org/Keychain
