@@ -3,7 +3,7 @@
 # this gets the directory of currently executing script
 # https://stackoverflow.com/questions/59895/how-to-get-the-source-directory-of-a-bash-script-from-within-the-script-itself
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-MUTANT_UPDATE_DOTFILES=0
+MUTANT_UPDATE_DOTFILES=1
 
 if [ $MUTANT_UPDATE_DOTFILES -ne 0 ]; then
   echo "Updating dotfiles"
