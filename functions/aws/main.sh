@@ -1,1 +1,0 @@
-source "$ROOT_DIR/functions/aws/ecr.sh"

@@ -13,7 +13,7 @@ if [ -n "$MUTANT_UPDATE_DOTFILES" ]; then
 fi
 
 source "$ROOT_DIR/functions/functions-no-dependency-but-posix.sh"
-source "$ROOT_DIR/functions/aws/main.sh"
+source "$ROOT_DIR/functions/aws.sh"
 source "$ROOT_DIR/functions/functions-dependencies.sh"
 source "$ROOT_DIR/functions/functions-docker.sh"
 source "$ROOT_DIR/functions/functions-git.sh"
