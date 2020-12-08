@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # $1=aws region $2=aws_account_id
 function mutant-aws-ecr-authenticate {
   error_msg='Parameters required: $1=region $2=aws_account_id'
