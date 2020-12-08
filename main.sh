@@ -6,7 +6,7 @@ ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 
 source "$ROOT_DIR/functions/functions-no-dependency-but-posix.sh"
-source "$ROOT_DIR/functions/aws.sh"
+source "$ROOT_DIR/functions/functions-aws.sh"
 source "$ROOT_DIR/functions/functions-dependencies.sh"
 source "$ROOT_DIR/functions/functions-docker.sh"
 source "$ROOT_DIR/hyperjump/hyperjump"
