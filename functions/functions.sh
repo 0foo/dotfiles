@@ -38,3 +38,29 @@ function mutant-encrypt-decrypt-file {
   openssl enc -aes-256-cbc -d -in $1 > $2
 }
 
+function mutant-is-login-shell {
+  test=echo $0
+  echo
+}
+
+function mutant-bash-kill-jobs {
+  pids=$(jobs -p)
+  ## TBI kill jobs
+}
+
+# this will delete git branches that aren't on the remote
+# Note: Spend more time researching this.
+function mutant-git-branch-prune-nonremote {
+  # clean unused remote references
+  git remote prune origin
+
+  # clean merged branches
+  git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+
+  # delete local branches not on remote
+  git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
+}
+
+function mutant-git-branch-prune {
+  git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
+}
