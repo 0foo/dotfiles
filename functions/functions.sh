@@ -64,3 +64,9 @@ function mutant-git-branch-prune-nonremote {
 function mutant-git-branch-prune {
   git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
 }
+
+
+function mutant-vpn-connect-personal {
+	cd ~/.vpn 
+	sudo openvpn --config my-vpn-config.ovpn 
+}
