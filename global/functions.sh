@@ -78,6 +78,7 @@ function mutant-vpn-connect-personal() {
 }
 
 # via: https://itsfoss.com/restart-network-ubuntu/
+# This is a hail mary full network reboot in case the ubuntu networking stack get whacky with no explanation
 function mutant-networking-reset-stack() {
   sudo nmcli networking off
   sudo nmcli networking on
