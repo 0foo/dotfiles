@@ -87,3 +87,8 @@ function mutant-networking-reset-stack() {
   sudo ifdown -a
   sudo ifup -a
 }
+
+function mutant-jekyll() {
+  docker run --rm  --volume="$PWD:/srv/jekyll"  -it jekyll/jekyll jekyll $1
+}
+alias jekyll=mutant-jekyll
