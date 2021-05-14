@@ -67,6 +67,11 @@ function mutant-git-branch-prune() {
   git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
 }
 
+function mutant-git-reset-cache() {
+  git rm -r --cached .
+  git add .
+}
+
 function mutant-vpn-connect-personal() {
   cd ~/.vpn
   sudo openvpn --config my-vpn-config.ovpn
