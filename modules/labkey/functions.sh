@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LABKEY_HOME=/labkey/labkey/release20.7-SNAPSHOT
+source /etc/profile.d/labkey_config.sh
 
 function mutant-labkey-run-tests {
   cd $LABKEY_HOME
