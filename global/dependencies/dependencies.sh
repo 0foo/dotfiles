@@ -8,7 +8,7 @@ sudo apt install git
 
 
 
-# install docker from module
+# install docker: see module
 
 
 # docker required

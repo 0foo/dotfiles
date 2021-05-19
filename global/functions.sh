@@ -30,14 +30,18 @@ function mutant-git-push-all() {
 
 # $1=file
 # $2=password
-function mutant-encrypt-encrypt-file() {
-  openssl enc -aes-256-cbc -in $1 -out $1.aes-256 -pass pass:$2
+function mutant-encrypt-encrypt() {
+  # openssl enc -aes-256-cbc -in $1 -out $1.aes-256 -pass pass:$2
+  tar --create --file - --gzip -- "$1" | \
+  openssl aes-256-cbc -salt -out "$1.enc.aes-256-cbc"
 }
 
 # $1=filename in
 # $2=filename out
-function mutant-encrypt-decrypt-file() {
-  openssl enc -aes-256-cbc -d -in $1 >$2
+function mutant-encrypt-decrypt() {
+  # openssl enc -aes-256-cbc -d -in $1 >$2
+  openssl aes-256-cbc -d -salt -in "$1" | \
+  tar -v --extract --gzip --file -
 }
 
 function mutant-is-login-shell() {
