@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# enter a docker container
 # $1=image or container id
 function mutant-docker-bin-bash {
 
