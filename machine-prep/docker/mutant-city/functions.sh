@@ -1,9 +1,5 @@
 #!/bin/bash
 
-function mutant-hello-world() {
-  echo "Hello World!"
-}
-
 # $1=length, default 10
 function mutant-encrypt-random-hash() {
   local size
@@ -14,14 +10,6 @@ function mutant-encrypt-random-hash() {
     echo ''
   )
   echo "$out"
-}
-
-function mutant-ssh-generate-key() {
-  local random_num
-  random_num="$(mutant-encrypt-random-hash 10)"
-  filename="/data/$random_num"
-  ssh-keygen -t rsa -b 4096 -f "$filename" -q -N ""
-  echo "Key Generated: $random_num and $random_num.pub"
 }
 
 # $1=file
@@ -40,85 +28,13 @@ function mutant-encrypt-decrypt() {
   tar -v --extract --gzip --file -
 }
 
-function mutant-is-login-shell() {
-  test=echo $0
-  echo
+
+# generate an ssh key
+function mutant-ssh-generate-key() {
+  local random_num
+  random_num="$(mutant-encrypt-random-hash 10)"
+  filename="/data/$random_num"
+  ssh-keygen -t rsa -b 4096 -f "$filename" -q -N ""
+  echo "Key Generated: $random_num and $random_num.pub"
 }
 
-function mutant-bash-kill-jobs() {
-  pids=$(jobs -p)
-  ## TBI kill jobs
-}
-
-
-# $1=git message
-function mutant-git-push-all() {
-  [ -z "$1" ] && message="Update" || message=$1
-  git add .
-  git commit -m $message
-  git push
-}
-
-# this will delete git branches that aren't on the remote
-# Note: Spend more time researching this.
-function mutant-git-branch-prune-nonremote() {
-  # clean unused remote references
-  git remote prune origin
-
-  # clean merged branches
-  git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
-
-  # delete local branches not on remote
-  git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
-}
-
-function mutant-git-branch-prune() {
-  git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d
-}
-
-function mutant-git-reset-cache() {
-  git rm -r --cached .
-  git add .
-}
-
-function mutant-vpn-connect-personal() {
-  cd ~/.vpn
-  sudo openvpn --config my-vpn-config.ovpn
-}
-
-# via: https://itsfoss.com/restart-network-ubuntu/
-# This is a hail mary full network reboot in case the ubuntu networking stack get whacky with no explanation
-function mutant-networking-reset-stack() {
-  sudo nmcli networking off
-  sudo nmcli networking on
-  sudo service network-manager restart
-
-  sudo dpkg -s ifupdown >/dev/null 2>&1
-
-  if [ $? -ne 0 ]; then
-    sudo apt install -y ifupdown
-  fi
-
-  sudo ifdown -a
-  sudo ifup -a
-}
-
-function mutant-jekyll() {
-  docker run --rm  --volume="$PWD:/srv/jekyll"  -it jekyll/jekyll jekyll $1
-}
-alias jekyll=mutant-jekyll
-
-
-function mutant-http-server() {
-  # python -m SimpleHTTPServer  
-  docker run  \
-    --rm \
-    -it \
-    -v $PWD:/data \
-    -p 8080:8080 \
-    simple-http-server
-}
-
-
-## Allows calling individual functions in this script from CLI
-"$@"

@@ -6,7 +6,7 @@
 ## How to build
 
 ```
-docker build . -t mutant-city
+docker build . -t mutant-encrypt
 ```
 
 ## How to run
@@ -20,5 +20,5 @@ The container the following mounted folders
 Run the container with:
 
 ```
-docker run --rm -it -v /PATH/TO/MOUNT:/data mutant-city
+docker run --rm -it -v /PATH/TO/MOUNT:/data mutant-encrypt
 ```

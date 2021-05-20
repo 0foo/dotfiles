@@ -1,6 +1,0 @@
-Host kali
-  HostName 52.12.213.206
-  User kali
-  IdentityFile ~/.ssh/kali-linux.pem
-  IdentitiesOnly yes
-  Port 22
