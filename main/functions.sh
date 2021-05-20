@@ -2,46 +2,23 @@
 
 # $1=length, default 10
 function mutant-encrypt-random-hash() {
-  local size
-  local out
-  [ -z "$1" ] && size=10 || size=$1
-  out=$(
-    head /dev/urandom | tr -dc A-Za-z0-9 | head -c $size
-    echo ''
-  )
-  echo "$out"
+  docker run --rm -it mutant-city /bin/bash -c "source /root/functions.sh && mutant-encrypt-random-hash $1"
 }
 
 function mutant-ssh-generate-key() {
-  local random_num
-  random_num="$(mutant-encrypt-random-hash 10)"
-  filename="/home/$USER/.ssh/$random_num"
-  ssh-keygen -t rsa -b 4096 -f "$filename" -q -N ""
-  echo "Key Generated: $random_num and $random_num.pub"
-}
-
-# $1=git message
-function mutant-git-push-all() {
-  [ -z "$1" ] && message="Update" || message=$1
-  git add .
-  git commit -m $message
-  git push
+    docker run -v /Users/$USER/.ssh:/data --rm -it mutant-city /bin/bash -c "source /root/functions.sh && mutant-ssh-generate-key"
 }
 
 # $1=file
 # $2=password
 function mutant-encrypt-encrypt() {
-  # openssl enc -aes-256-cbc -in $1 -out $1.aes-256 -pass pass:$2
-  tar --create --file - --gzip -- "$1" | \
-  openssl aes-256-cbc -salt -out "$1.enc.aes-256-cbc"
+    docker run -v .:/data --rm -it mutant-city /bin/bash -c "source /root/functions.sh && mutant-encrypt-encrypt $1"
 }
 
 # $1=filename in
 # $2=filename out
 function mutant-encrypt-decrypt() {
-  # openssl enc -aes-256-cbc -d -in $1 >$2
-  openssl aes-256-cbc -d -salt -in "$1" | \
-  tar -v --extract --gzip --file -
+    docker run -v $PWD:/data --rm -it mutant-city /bin/bash -c "source /root/functions.sh && mutant-encrypt-decrypt $1"
 }
 
 function mutant-is-login-shell() {
@@ -52,6 +29,11 @@ function mutant-is-login-shell() {
 function mutant-bash-kill-jobs() {
   pids=$(jobs -p)
   ## TBI kill jobs
+}
+
+# $1=git message
+function mutant-git-push-all() {
+  docker run -v .:/data -v /Users/$USER/.ssh:/root/.ssh --rm -it mutant-city /bin/bash -c "source /root/functions.sh && mutant-git-push-all"
 }
 
 # this will delete git branches that aren't on the remote
@@ -113,3 +95,5 @@ function mutant-http-server() {
     -p 8080:8080 \
     simple-http-server
 }
+
+
