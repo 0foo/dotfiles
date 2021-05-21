@@ -6,7 +6,7 @@ function mutant-encrypt-random-hash() {
 # $1=file
 # $2=password
 function mutant-encrypt-encrypt() {
-    docker run -v .:/data --rm -it mutant-city /bin/bash -c "source /root/functions.sh && mutant-encrypt-encrypt $1"
+    docker run -v $PWD:/data --rm -it mutant-city /bin/bash -c "source /root/functions.sh && mutant-encrypt-encrypt $1"
 }
 
 # $1=filename in
