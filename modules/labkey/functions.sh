@@ -3,13 +3,13 @@
 source /etc/profile.d/labkey_config.sh
 
 function mutant-labkey-run-tests {
-  cd $LABKEY_HOME
+  cd $LABKEY_REPO
   ./gradlew :server:test:uiTest -Ptest=TNPRC_RequestsTest.testColonyManagementRequest -Pclean=false -Pselenium.browser=firefox
 }
 
 
 function mutant-labkey-build-tnprc {
-  cd $LABKEY_HOME
+  cd $LABKEY_REPO
   ./gradlew :server:modules:tnprc_ehr:deployModule --stacktrace
 }
 
