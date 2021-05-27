@@ -1,6 +1,5 @@
 #!/bin/bash
 
-source /etc/profile.d/labkey_config.sh
 
 function mutant-labkey-run-tests {
   cd $LABKEY_REPO

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ./git-auto-complete.bash personal-setup.sh
+
 # $1=git message
 function mutant-git-push-all() {
   [ -z "$1" ] && message="Update" || message=$1
