@@ -14,3 +14,5 @@ function mutant-encrypt-encrypt() {
 function mutant-encrypt-decrypt() {
     docker run -v $PWD:/data --rm -it mutant-city /bin/bash -c "source /root/functions.sh && mutant-encrypt-decrypt $1"
 }
+
+echo "encrypt module loaded"
