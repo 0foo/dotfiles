@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./git-auto-complete.bash personal-setup.sh
+# figure out how to make this source from this directory 
+# source ./git-auto-complete.bash
 
 # $1=git message
 function mutant-git-push-all() {
@@ -31,3 +32,5 @@ function mutant-git-branch-prune-nonremote() {
   # delete local branches not on remote
   git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
 }
+
+echo "git module loaded"

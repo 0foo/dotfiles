@@ -25,6 +25,7 @@ alias ls="ls -G"
 alias ll='ls -aGlF'
 alias la='ls -AG'
 alias l='ls -CFG'
+alias ld='ls -ld -- */'
 
 
 # don't put duplicate lines in the history. See bash(1) for more options
