@@ -12,4 +12,4 @@ source "$ROOT_DIR/modules/ssh/functions.sh"
 source "$ROOT_DIR/modules/jekyll/functions.sh"
 source "$ROOT_DIR/modules/simple-http-server/functions.sh"
 source "$ROOT_DIR/modules/labkey/functions.sh"
-
+source "$ROOT_DIR/modules/kubernetes/includes.sh"
