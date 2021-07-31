@@ -20,6 +20,8 @@ chsh -s /usr/local/bin/bash
 # bash completion: https://github.com/kubernetes/kubernetes/issues/48575
 echo "source $(brew --prefix)/etc/bash_completion" >> ~/.bashrc
 
+# build the locate DB
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
 # fini
 echo "CLOSE THE SHELL AND REOPEN FOR UPDATED BASH SHELL"
