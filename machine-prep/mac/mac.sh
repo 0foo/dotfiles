@@ -8,10 +8,6 @@ Killall Finder
 # https://brew.sh/
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-
-# packages
-brew install the_silver_searcher
-
 # need to update the mac-os bash
 brew install bash
 sudo bash -c "echo '/usr/local/bin/bash' >> /etc/shells" # note: permissions require doing it this way
@@ -23,6 +19,16 @@ echo "source $(brew --prefix)/etc/bash_completion" >> ~/.bashrc
 # build the locate DB
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
+
+
+# packages
+brew install the_silver_searcher
+
+
 # fini
 echo "CLOSE THE SHELL AND REOPEN FOR UPDATED BASH SHELL"
+
+
+# test these out
+# brew install chrome, signal, pycharm, vlc, openvpn, firefox, virtualbox, sublime, qbittorrent
 
