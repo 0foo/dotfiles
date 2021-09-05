@@ -2,13 +2,13 @@
 
 
 function mutant-labkey-run-tests {
-  cd $LABKEY_REPO
+  cd $LABKEY_HOME
   ./gradlew :server:test:uiTest -Ptest=TNPRC_RequestsTest.testColonyManagementRequest -Pclean=false -Pselenium.browser=firefox
 }
 
 
 function mutant-labkey-build-tnprc {
-  cd $LABKEY_REPO
+  cd $LABKEY_HOME
   ./gradlew :server:modules:tnprc_ehr:deployModule --stacktrace
 }
 
