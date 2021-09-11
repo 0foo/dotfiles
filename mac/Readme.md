@@ -1,0 +1,20 @@
+### How
+1. run setup.sh
+2. source mac.sh in a login script.
+
+
+
+## Other to do's on machine
+
+https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+* This should be done in the file but check to be sure
+* https://www.cyberciti.biz/faq/alpine-linux-install-bash-using-apk-command/
+
+
+### Chrome
+* disable notifications, credit card, password saving
+
+### Mac OSx
+* change touchbar to just basic options
+* disable gestures

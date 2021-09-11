@@ -20,11 +20,6 @@ echo "source $(brew --prefix)/etc/bash_completion" >> ~/.bashrc
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
 
-
-# packages
-brew install the_silver_searcher
-
-
 # fini
 echo "CLOSE THE SHELL AND REOPEN FOR UPDATED BASH SHELL"
 
