@@ -6,8 +6,9 @@
 
 ## Other to do's on machine
 
-* https://www.cyberciti.biz/faq/alpine-linux-install-bash-using-apk-command/
-    * This should already be done in the setup.sh file but check to be sure
+*  Update Mac Bash shell and change from z-shell
+   * https://gist.github.com/AshKyd/299a3cd0bcbd6dfb94ddc37a929073b5
+   * This should already be done in the setup.sh file but check to be sure
 * https://nodejs.org/en/
 
 ### Chrome
