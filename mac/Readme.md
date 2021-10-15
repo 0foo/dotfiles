@@ -6,7 +6,6 @@
 
 ## Other to do's on machine
 
-* https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 * https://www.cyberciti.biz/faq/alpine-linux-install-bash-using-apk-command/
     * This should already be done in the setup.sh file but check to be sure
 * https://nodejs.org/en/
@@ -17,3 +16,7 @@
 ### Mac OSx
 * change touchbar to just basic options
 * disable gestures
+
+### To do:
+* global git config
+* global git ignore
