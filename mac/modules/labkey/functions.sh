@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-function mutant-labkey-run-tests {
+
   cd $LABKEY_HOME
   ./gradlew :server:test:uiTest -Ptest=TNPRC_RequestsTest.testColonyManagementRequest -Pclean=false -Pselenium.browser=firefox
 }

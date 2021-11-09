@@ -2,8 +2,6 @@
 1. run setup.sh
 2. source mac.sh in a login script.
 
-
-
 ## Other to do's on machine
 
 * https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
@@ -17,3 +15,7 @@
 ### Mac OSx
 * change touchbar to just basic options
 * disable gestures
+
+
+### Visual Studio Code
+* enable settings sync with github login
