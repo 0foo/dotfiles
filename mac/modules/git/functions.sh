@@ -33,4 +33,3 @@ function mutant-git-branch-prune-nonremote() {
   git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
 }
 
-echo "git module loaded"
