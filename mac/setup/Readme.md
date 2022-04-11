@@ -15,12 +15,13 @@
 ### Mac OSx
 * change touchbar to just basic options
 * disable gestures
+* install Alfred and set the shortcut to replace spotlight(in keyboard -> preferences somewhere)
 
-<<<<<<< HEAD
 
 ### Visual Studio Code
 * enable settings sync with github login
-=======
+
+
 ### To do:
 * global git config
 * global git ignore
