@@ -132,16 +132,19 @@ alias ld='ls -ld -- */'
 
 
 
-## HISTORY
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-# HISTCONTROL=ignoredups:ignorespace
-# shopt -s histappend
+## SHARE HISTORY BETWEEN TERMINALS
+
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+# After each command, append to the history file and reread it
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
+
+
 
 
 # make less more friendly for non-text input files, see lesspipe(1)
