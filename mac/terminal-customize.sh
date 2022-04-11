@@ -1,10 +1,4 @@
 #!/bin/bash
-function print_error {
-    read line file <<<$(caller)
-    echo "An error occurred in line $line of file $file:" >&2
-    sed "${line}q;d" "$file" >&2
-}
-trap print_error ERR
 
 #  Customize BASH PS1 prompt 
 
@@ -141,8 +135,8 @@ alias ld='ls -ld -- */'
 ## HISTORY
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
-shopt -s histappend
+# HISTCONTROL=ignoredups:ignorespace
+# shopt -s histappend
 
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
