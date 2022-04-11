@@ -1,7 +1,17 @@
 #!/bin/bash
 
-#  Customize BASH PS1 prompt 
 
+# clear history for good!
+# https://askubuntu.com/questions/191999/how-to-clear-bash-history-completely
+mutant_clear_history () {
+   cat /dev/null > ~/.bash_history && history -c
+}
+alias mutant_clear_history=mutant_clear_history
+
+
+
+
+#  Customize BASH PS1 prompt 
 # get git branch
 function parse_git_branch {
    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -133,7 +143,8 @@ alias ld='ls -ld -- */'
 
 
 ## SHARE HISTORY BETWEEN TERMINALS
-
+# Avoid duplicates
+HISTCONTROL=ignoredups:erasedups
 # When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
 # After each command, append to the history file and reread it
