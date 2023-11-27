@@ -1,16 +1,3 @@
-#!/bin/bash
-
-
-# clear history for good!
-# https://askubuntu.com/questions/191999/how-to-clear-bash-history-completely
-mutant_clear_history () {
-   cat /dev/null > ~/.bash_history && history -c
-}
-alias mutant_clear_history=mutant_clear_history
-
-
-
-
 #  Customize BASH PS1 prompt 
 # get git branch
 function parse_git_branch {
@@ -110,51 +97,6 @@ function set_PS1 () {
 }
 # run the function
 set_PS1
-
-
-
-# configure coloring
-
-# # https://gist.github.com/vratiu/9780109
-# CUSTOMIZE_DIR_PS1="\w\[\033[01;37m\]"
-# CUSTOMIZE_USER_HOST_PS1="[\u@\h]\[\033[0;33m\]"
-# CUSTOMIZE_GIT_BRANCH=""
-# PS1="$CUSTOMIZE_USER_HOST_PS1 $CUSTOMIZE_DIR_PS1 $CUSTOMIZE_GIT_BRANCH : "
-
-# #   [\033[01;39m\]   \[\033[01;32m\]
-# # If this is an xterm set the title to user@host:dir
-# case "$TERM" in
-# xterm*|rxvt*)
-#     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-#     ;;
-# *)
-#     ;;
-# esac
-
-# some aliases
-alias ls="ls -G"
-# some ls aliases
-
-alias ll='ls -aGlF'
-alias la='ls -AG'
-alias l='ls -CFG'
-alias ld='ls -ld -- */'
-
-
-
-## SHARE HISTORY BETWEEN TERMINALS
-# Avoid duplicates
-HISTCONTROL=ignoredups:erasedups
-# When the shell exits, append to the history file instead of overwriting it
-shopt -s histappend
-# After each command, append to the history file and reread it
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
 
 
 
