@@ -3,3 +3,9 @@ ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 source "$ROOT_DIR/gui.sh"
 source "$ROOT_DIR/history.sh"
+
+
+
+function quit() {
+    kill $(echo $PPID)
+}
