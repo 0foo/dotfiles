@@ -11,10 +11,12 @@ source "$ROOT_DIR/history.sh"
 # ln -s /usr/bin ~/symlinks/b
 # cd b   # Switches to /usr/bin
 
-test -d ~/bash_shortcuts && export CDPATH=~/bash_shortcuts
+test -d ~/bash_shortcuts && export CDPATH=~/bash_shortcuts;
 
 
 
-
+function git_go() {
+   git add . && git commit -m "save state" && git push;
+}
 
 
