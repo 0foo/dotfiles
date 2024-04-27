@@ -18,7 +18,7 @@ shopt -s histappend
 # After each command, append to the history file and reread it
 
 # PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}"
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # trap 'history -a; history -c; history -r' DEBUG
 
 
