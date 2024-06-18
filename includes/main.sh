@@ -21,3 +21,6 @@ function git_go() {
 }
 
 
+function http_status_codes {
+   /bin/bash "$ROOT_DIR/http_status_codes.sh"
+}
