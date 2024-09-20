@@ -7,5 +7,5 @@
     * inside of /bash/bash.bashrc add a source command to global_additions
     * i.e. `source /opt/dotfiles/custom/global_additions.sh`
 4. add user specific functionality
-    * source the includes file from each user account you want to add this to
-    * `source /opt/dotfiles/includes.sh`
+    * source the includes file from each user account you want to add this to: `source /opt/dotfiles/includes.sh`
+    * and/or can source files from individual modules
