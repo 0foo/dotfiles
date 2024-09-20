@@ -1,15 +1,6 @@
 # display history with time
 export HISTTIMEFORMAT="%m/%d/%Y[%T] "
 
-# clear history for good!
-# https://askubuntu.com/questions/191999/how-to-clear-bash-history-completely
-nick_clear_history () {
-   cat /dev/null > ~/.bash_history && history -c
-}
-alias nick_clear_history=nick_clear_history
-
-
-
 ## SHARE HISTORY BETWEEN TERMINALS
 # Avoid duplicates
 HISTCONTROL=ignoredups:erasedups

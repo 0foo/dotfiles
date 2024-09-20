@@ -1,3 +1,5 @@
+echo "source GUI module"
+
 #  Customize BASH PS1 prompt 
 # get git branch
 function parse_git_branch {
